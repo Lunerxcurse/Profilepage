@@ -1,0 +1,51 @@
+/* Cursor Styles */
+.cursor {
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 100%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.2s, height 0.2s;
+}
+
+.cursor-follower {
+  width: 24px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 100%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.1s;
+}
+
+/* Custom cursor states */
+.cursor.active {
+  width: 16px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.cursor-follower.active {
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+/* Hide default cursor */
+* {
+  cursor: none !important;
+}
+
+/* Show default cursor on mobile/touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .cursor, .cursor-follower {
+    display: none;
+  }
+  * {
+    cursor: auto !important;
+  }
+}
