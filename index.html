@@ -30,14 +30,20 @@
             <div class="flex p-4 @container">
               <div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
                 <div class="flex gap-3 sm:gap-4 flex-col sm:flex-row items-start">
-                  <div class="relative">
-                    <div id="user-avatar" class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-24 w-24 sm:min-h-32 sm:w-32" style="background-image: url('https://images.websim.com/avatar/Lunerxcurse')"></div>
-                    <div class="absolute bottom-0 right-0 w-8 h-8 sm:w-10 sm:h-10 bg-green-500 rounded-full border-4 border-[#101323] flex items-center justify-center">
-                      <div class="w-2 h-2 sm:w-3 sm:h-3 bg-white rounded-full animate-pulse"></div>
+                  <div class="flex items-start">
+                    <div class="relative">
+                      <div id="user-avatar" class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-24 w-24 sm:min-h-32 sm:w-32" style="background-image: url('https://cdn.discordapp.com/avatars/1395993370245206129/0d823b62b71c27f4db52a130be57f688?size=1024')"></div>
+                      <div class="absolute bottom-0 right-0 w-8 h-8 sm:w-10 sm:h-10 bg-green-500 rounded-full border-4 border-[#101323] flex items-center justify-center">
+                        <div class="w-2 h-2 sm:w-3 sm:h-3 bg-white rounded-full animate-pulse"></div>
+                      </div>
+                      <div id="current-project-desktop" class="hidden sm:block absolute -top-2 -right-2 bg-[#2f396a] rounded-lg px-2 py-1 sm:px-3 sm:py-2 text-xs text-white whitespace-nowrap shadow-lg max-w-[120px] sm:max-w-none">
+                        <div class="text-green-400 font-semibold">Working on</div>
+                        <div id="current-project-name-desktop">Vidlo</div>
+                      </div>
                     </div>
-                    <div class="absolute -top-2 -right-2 bg-[#2f396a] rounded-lg px-2 py-1 sm:px-3 sm:py-2 text-xs text-white whitespace-nowrap shadow-lg max-w-[120px] sm:max-w-none">
+                    <div id="current-project-mobile" class="block sm:hidden ml-2 mt-2 bg-[#2f396a] rounded-lg px-2 py-1 text-xs text-white whitespace-nowrap shadow-lg max-w-[120px] sm:max-w-none">
                       <div class="text-green-400 font-semibold">Working on</div>
-                      <div id="current-project">Flux OS</div>
+                      <div id="current-project-name-mobile">Vidlo</div>
                     </div>
                   </div>
                   <div class="flex flex-col justify-center">
@@ -51,25 +57,10 @@
                       <!-- Social links for mobile -->
                       <div class="flex gap-2 sm:hidden">
                         <a href="https://www.roblox.com/users/4819145/profile" target="_blank" class="group">
-                          <div class="w-9 h-9 bg-[#00b2ff] hover:bg-[#0088cc] rounded-full flex items-center justify-center transition-colors">
-                            <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
-                              <path d="M5.8 2.4L18.2 21.6L21.6 18.2L9.2 2.4L5.8 2.4Z M18.2 2.4L2.4 18.2L5.8 21.6L21.6 5.8L18.2 2.4Z"/>
-                            </svg>
-                          </div>
+                          <img src="https://i.pinimg.com/736x/f8/9d/e3/f89de387a07563ee444f8e9e17f7bb8c.jpg" alt="Roblox" class="w-9 h-9 rounded-full object-cover transition-transform group-hover:scale-110">
                         </a>
-                        <a href="https://discord.com/users/1311869629714399342" target="_blank" class="group">
-                          <div class="w-9 h-9 bg-[#5865f2] hover:bg-[#4752c4] rounded-full flex items-center justify-center transition-colors">
-                            <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
-                              <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0188 1.3332-.946 2.4189-2.1568 2.4189Z"/>
-                            </svg>
-                          </div>
-                        </a>
-                        <a href="mailto:briansubirat6@gmail.com" class="group">
-                          <div class="w-9 h-9 bg-[#ea4335] hover:bg-[#d33b2c] rounded-full flex items-center justify-center transition-colors">
-                            <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
-                              <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 10.455l6.545-6.09v-.545h3.819c.904 0 1.636.732 1.636 1.636z"/>
-                            </svg>
-                          </div>
+                        <a href="https://discord.com/users/1395993370245206129 target="_blank" class="group">
+                          <img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" alt="Discord" class="w-9 h-9 rounded-full object-cover transition-transform group-hover:scale-110">
                         </a>
                       </div>
                     </div>
@@ -77,28 +68,12 @@
                 </div>
                 <div class="hidden sm:flex gap-3 flex-row items-center justify-center sm:justify-end">
                   <a href="https://www.roblox.com/users/4819145/profile" target="_blank" class="flex flex-col items-center gap-2 text-center group">
-                    <div class="w-12 h-12 bg-[#00b2ff] hover:bg-[#0088cc] rounded-full flex items-center justify-center transition-colors">
-                      <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M5.8 2.4L18.2 21.6L21.6 18.2L9.2 2.4L5.8 2.4Z M18.2 2.4L2.4 18.2L5.8 21.6L21.6 5.8L18.2 2.4Z"/>
-                      </svg>
-                    </div>
+                    <img src="https://i.pinimg.com/736x/f8/9d/e3/f89de387a07563ee444f8e9e17f7bb8c.jpg" alt="Roblox" class="w-12 h-12 rounded-full object-cover transition-transform group-hover:scale-110">
                     <span class="text-[#8e99cc] text-xs group-hover:text-white transition-colors">Roblox</span>
                   </a>
-                  <a href="https://discord.com/users/1311869629714399342" target="_blank" class="flex flex-col items-center gap-2 text-center group">
-                    <div class="w-12 h-12 bg-[#5865f2] hover:bg-[#4752c4] rounded-full flex items-center justify-center transition-colors">
-                      <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0188 1.3332-.946 2.4189-2.1568 2.4189Z"/>
-                      </svg>
-                    </div>
+                  <a href="https://discord.com/users/1395993370245206129" target="_blank" class="flex flex-col items-center gap-2 text-center group">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" alt="Discord" class="w-12 h-12 rounded-full object-cover transition-transform group-hover:scale-110">
                     <span class="text-[#8e99cc] text-xs group-hover:text-white transition-colors">Discord</span>
-                  </a>
-                  <a href="mailto:briansubirat6@gmail.com" class="flex flex-col items-center gap-2 text-center group">
-                    <div class="w-12 h-12 bg-[#ea4335] hover:bg-[#d33b2c] rounded-full flex items-center justify-center transition-colors">
-                      <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 10.455l6.545-6.09v-.545h3.819c.904 0 1.636.732 1.636 1.636z"/>
-                      </svg>
-                    </div>
-                    <span class="text-[#8e99cc] text-xs group-hover:text-white transition-colors">Gmail</span>
                   </a>
                 </div>
               </div>
@@ -131,7 +106,7 @@
                   <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" style='background-image: url("https://project-screenshots.websim.com/019650c5-0c0d-70b5-97ed-b59c9d9c06dd");'></div>
                 </a>
                 <div>
-                  <p class="text-white text-base font-medium leading-normal">Flux OS</p>
+                  <p class="text-white text-base font-medium leading-normal">Flux OS<span class="text-xs text-red-400 ml-2">(Not Mobile Supported)</span></p>
                   <p class="text-[#8e99cc] text-sm font-normal leading-normal">A OS I made similar to Windows, but it is still under development, so expect bugs.</p>
                 </div>
               </div>
@@ -149,7 +124,7 @@
                   <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" style='background-image: url("https://project-screenshots.websim.com/019748e3-aba4-7d83-be3b-62d659036f80");'></div>
                 </a>
                 <div>
-                  <p class="text-white text-base font-medium leading-normal">Physics Playground</p>
+                  <p class="text-white text-base font-medium leading-normal">Physics Playground<span class="text-xs text-red-400 ml-2">(Not Mobile Supported)</span></p>
                   <p class="text-[#8e99cc] text-sm font-normal leading-normal">A physics playground with a lot of objects and effects with realistic physics.</p>
                 </div>
               </div>
@@ -158,7 +133,7 @@
                   <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" style='background-image: url("https://project-screenshots.websim.com/0194c210-b420-7ae3-b8e5-8d9bacc8fd6a");'></div>
                 </a>
                 <div>
-                  <p class="text-white text-base font-medium leading-normal">3d Animator Online</p>
+                  <p class="text-white text-base font-medium leading-normal">3d Animator Online<span class="text-xs text-red-400 ml-2">(Not Mobile Supported)</span></p>
                   <p class="text-[#8e99cc] text-sm font-normal leading-normal">A 3d Online Animater like blender made by me.</p>
                 </div>
               </div>
@@ -181,15 +156,6 @@
                 </div>
               </div>
               <div class="flex flex-col gap-3 pb-3 magic-hover cursor-pointer">
-                <a href="https://school-terminal-com.pages.dev/" target="_blank">
-                  <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" style='background-image: url("https://project-screenshots.websim.com/0196ac97-4ede-7d6c-97be-f817697362be");'></div>
-                </a>
-                <div>
-                  <p class="text-white text-base font-medium leading-normal">School-Terminal</p>
-                  <p class="text-[#8e99cc] text-sm font-normal leading-normal">A fake school terminal for pranks</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-3 pb-3 magic-hover cursor-pointer">
                 <a href="https://gamehub-com.pages.dev/" target="_blank">
                   <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" style='background-image: url("https://project-screenshots.websim.com/0195d513-b581-7439-8f9f-eae6828460e9");'></div>
                 </a>
@@ -205,6 +171,15 @@
                 <div>
                   <p class="text-white text-base font-medium leading-normal">SwiftGuard</p>
                   <p class="text-[#8e99cc] text-sm font-normal leading-normal">A Browser I made similar to Chrome.</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3 magic-hover cursor-pointer">
+                <a href="https://streamflix-com-azi.pages.dev/" target="_blank">
+                  <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" style='background-image: url("Screenshot 2025-07-21 2.07.12 AM.png");'></div>
+                </a>
+                <div>
+                  <p class="text-white text-base font-medium leading-normal">Vidlo - A Free Movie Platform</p>
+                  <p class="text-[#8e99cc] text-sm font-normal leading-normal">A free movie platform with millions of movies and it is ad free</p>
                 </div>
               </div>
             </div>
