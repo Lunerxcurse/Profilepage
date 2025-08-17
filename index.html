@@ -59,8 +59,17 @@
                         <a href="https://www.roblox.com/users/4819145/profile" target="_blank" class="group">
                           <img src="https://i.pinimg.com/736x/f8/9d/e3/f89de387a07563ee444f8e9e17f7bb8c.jpg" alt="Roblox" class="w-9 h-9 rounded-full object-cover transition-transform group-hover:scale-110">
                         </a>
-                        <a href="https://discord.com/users/1395993370245206129 target="_blank" class="group">
+                        <a href="https://discord.com/users/1395993370245206129" target="_blank" class="group">
                           <img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" alt="Discord" class="w-9 h-9 rounded-full object-cover transition-transform group-hover:scale-110">
+                        </a>
+                        <a href="https://github.com/Lunerxcurse" target="_blank" class="group">
+                          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark-Light-64px.png" alt="GitHub" class="w-9 h-9 rounded-full object-cover transition-transform group-hover:scale-110">
+                        </a>
+                        <a href="https://www.twitch.tv/dinglenut36" target="_blank" class="group">
+                          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111668.png" alt="Twitch" class="w-9 h-9 rounded-full object-cover transition-transform group-hover:scale-110">
+                        </a>
+                        <a href="https://steamcommunity.com/profiles/76561199887966035/" target="_blank" class="group">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Steam" class="w-9 h-9 rounded-full object-cover transition-transform group-hover:scale-110">
                         </a>
                       </div>
                     </div>
@@ -74,6 +83,18 @@
                   <a href="https://discord.com/users/1395993370245206129" target="_blank" class="flex flex-col items-center gap-2 text-center group">
                     <img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" alt="Discord" class="w-12 h-12 rounded-full object-cover transition-transform group-hover:scale-110">
                     <span class="text-[#8e99cc] text-xs group-hover:text-white transition-colors">Discord</span>
+                  </a>
+                  <a href="https://github.com/Lunerxcurse" target="_blank" class="flex flex-col items-center gap-2 text-center group">
+                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark-Light-64px.png" alt="GitHub" class="w-12 h-12 rounded-full object-cover transition-transform group-hover:scale-110">
+                    <span class="text-[#8e99cc] text-xs group-hover:text-white transition-colors">GitHub</span>
+                  </a>
+                  <a href="https://www.twitch.tv/dinglenut36" target="_blank" class="flex flex-col items-center gap-2 text-center group">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111668.png" alt="Twitch" class="w-12 h-12 rounded-full object-cover transition-transform group-hover:scale-110">
+                    <span class="text-[#8e99cc] text-xs group-hover:text-white transition-colors">Twitch</span>
+                  </a>
+                  <a href="https://steamcommunity.com/profiles/76561199887966035/" target="_blank" class="flex flex-col items-center gap-2 text-center group">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Steam" class="w-12 h-12 rounded-full object-cover transition-transform group-hover:scale-110">
+                    <span class="text-[#8e99cc] text-xs group-hover:text-white transition-colors">Steam</span>
                   </a>
                 </div>
               </div>
@@ -189,29 +210,37 @@
     </div>
     
     <script>
-        // Initialize magic mouse
-        magicMouse({
-            outerStyle: "circle",
-            hoverEffect: "circle-move",
-            hoverItemMove: false,
-            defaultCursor: false,
-            outerWidth: 30,
-            outerHeight: 30
-        });
-        
         // Follow button functionality
-        document.getElementById('follow-btn').addEventListener('click', function() {
-            const btn = this;
-            if (btn.textContent === 'Follow') {
-                btn.textContent = 'Following';
-                btn.classList.remove('bg-[#4285f4]', 'hover:bg-[#3367d6]');
-                btn.classList.add('bg-green-500', 'hover:bg-green-600');
-            } else {
-                btn.textContent = 'Follow';
-                btn.classList.remove('bg-green-500', 'hover:bg-green-600');
-                btn.classList.add('bg-[#4285f4]', 'hover:bg-[#3367d6]');
+        (async () => {
+          const btn = document.getElementById('follow-btn');
+          const targetUser = 'Lunerxcurse';
+          const setState = (isFollowing) => {
+            btn.dataset.state = isFollowing ? 'following' : 'follow';
+            btn.textContent = isFollowing ? 'Following' : 'Follow';
+            btn.classList.toggle('bg-green-500', isFollowing);
+            btn.classList.toggle('hover:bg-green-600', isFollowing);
+            btn.classList.toggle('bg-[#4285f4]', !isFollowing);
+            btn.classList.toggle('hover:bg-[#3367d6]', !isFollowing);
+          };
+          try {
+            const res = await fetch(`/api/v1/users/${targetUser}/follow-status`);
+            if (res.ok) {
+              const { isFollowing } = await res.json();
+              setState(isFollowing);
             }
-        });
+          } catch (e) { /* silent */ }
+          btn.addEventListener('click', async () => {
+            const isFollowing = btn.dataset.state === 'following';
+            btn.disabled = true;
+            try {
+              const method = isFollowing ? 'DELETE' : 'POST';
+              const res = await fetch(`/api/v1/users/${targetUser}/follow`, { method });
+              if (!res.ok) throw new Error('request failed');
+              setState(!isFollowing);
+            } catch (e) { /* revert visual if needed */ }
+            finally { btn.disabled = false; }
+          });
+        })();
     </script>
   </body>
 </html>
